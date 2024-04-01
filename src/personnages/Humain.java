@@ -23,11 +23,11 @@ public class Humain {
 		System.out.println("(" + nom + ")" + texte);
 	}
 	
-	private void gagnerArgent(int gain) {
+	public void gagnerArgent(int gain) {
 		argent+=gain;
 	}
 	
-	private void perdreArgent(int perte) {
+	public void perdreArgent(int perte) {
 		argent-=perte;
 	}
 	
@@ -35,7 +35,7 @@ public class Humain {
 		parler("Bonjour ! Je m’appelle "+nom+" et j’aime boire du "+ boissonfavorite);
 	}
 
-	 public void boire() {
+	public void boire() {
 		parler("Mmmm, un bon verre de "+ boissonfavorite+"! GLOUPS !");
 	}
 	
