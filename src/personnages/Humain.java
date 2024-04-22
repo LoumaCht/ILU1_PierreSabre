@@ -4,14 +4,15 @@ public class Humain {
 	private String  nom;
 	private String boissonfavorite;
 	private int argent;
-	private Humain[] memoire;
-	private int nbConnaissance=0;
+	protected Humain[] memoire;
+	protected int nbConnaissance;
 	
 	
 	public Humain(String nom ,String boissonfavorite , int argent) {
 		this.nom = nom;
 		this.boissonfavorite = boissonfavorite;
 		this.argent = argent;
+		this.nbConnaissance=0;
 		memoire = new Humain[30];
 	}
 	
@@ -23,15 +24,15 @@ public class Humain {
 		return argent;
 	}
 
-	public void parler(String texte) {
+	protected  void parler(String texte) {
 		System.out.println("(" + nom + ")" + texte);
 	}
 	
-	public void gagnerArgent(int gain) {
+	protected void gagnerArgent(int gain) {
 		argent+=gain;
 	}
 	
-	public void perdreArgent(int perte) {
+	protected void perdreArgent(int perte) {
 		argent-=perte;
 	}
 	
