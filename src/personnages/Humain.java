@@ -12,7 +12,7 @@ public class Humain {
 		this.nom = nom;
 		this.boissonfavorite = boissonfavorite;
 		this.argent = argent;
-		memoire = new Humain[3];
+		memoire = new Humain[30];
 	}
 	
 	public String getNom() {
@@ -44,7 +44,7 @@ public class Humain {
 	}
 	
 	private void memoriser(Humain humain) {
-		if (nbConnaissance <=2) {
+		if (nbConnaissance <=29) {
 			memoire[nbConnaissance]=humain;
 			nbConnaissance++;
 		} else {
