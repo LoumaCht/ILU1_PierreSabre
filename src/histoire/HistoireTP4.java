@@ -4,9 +4,9 @@ public class HistoireTP4 {
 
 	public static void main(String[] args) {
 		Humain prof = new Humain("Prof","kombucha",54);
-		Commercant mariano = new Commercant("Mariano", "the", 20);
-		Yakuza yakuza = new Yakuza("Yaku Le Noir", "whisky", 30,"Warsong",0);
-		Ronin ronin = new Ronin("Roro"," shochu",60,1);
+		Commercant mariano = new Commercant("Mariano", 20);
+		Yakuza yakuza = new Yakuza("Yaku Le Noir", "whisky", 30,"Warsong");
+		Ronin ronin = new Ronin("Roro"," shochu",60);
 		prof.direBonjour();
 		prof.acheter("boisson", 12);
 		prof.boire();

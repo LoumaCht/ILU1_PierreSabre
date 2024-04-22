@@ -4,11 +4,15 @@ public class Humain {
 	private String  nom;
 	private String boissonfavorite;
 	private int argent;
+	private Humain[] memoire;
+	private int nbConnaissance=0;
+	
 	
 	public Humain(String nom ,String boissonfavorite , int argent) {
 		this.nom = nom;
 		this.boissonfavorite = boissonfavorite;
 		this.argent = argent;
+		memoire = new Humain[3];
 	}
 	
 	public String getNom() {
@@ -38,6 +42,37 @@ public class Humain {
 	public void boire() {
 		parler("Mmmm, un bon verre de "+ boissonfavorite+"! GLOUPS !");
 	}
+	
+	private void memoriser(Humain humain) {
+		if (nbConnaissance <=2) {
+			memoire[nbConnaissance]=humain;
+			nbConnaissance++;
+		} else {
+			for (int i=0;i<nbConnaissance-1;i++) {
+				memoire[i]=memoire[i+1];
+			}
+			memoire[nbConnaissance-1]=humain;
+		}
+	}
+	private void repondre(Humain humain) {
+		this.direBonjour();
+		memoriser(humain);
+	}
+	
+	
+	public void listerConnaissance(){
+		String msg = " Je connais beaucoup de monde dont :";
+		for(int i=0; i<nbConnaissance;i++) {
+			msg+=  memoire[i].getNom()+"|";
+		}
+		System.out.println(msg);
+	}
+	public void faireConnaissanceAvec(Humain humain2) {
+		this.direBonjour();
+		humain2.repondre(this);
+		this.memoriser(humain2);
+	}
+
 	
 	public void acheter(String bien, int prix) {
 		if (argent >= prix) {
